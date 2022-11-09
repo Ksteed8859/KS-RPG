@@ -5,10 +5,6 @@ const specSymbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var choiceLength = "";
-var choiceLowercase;
-var choiceUppercase;
-var choiceSymbols;
-var choiceNumbers;
 
 //
 var generatePassword = function() {
@@ -58,11 +54,12 @@ var generatePassword = function() {
 //
   var newPassword = ""
 
-  for (var i =0; i < choiceLength, i++;) {
+  for (var i =0; i < choiceLength; i++) {
     newPassword = newPassword + characterArray[Math.floor(Math.random() * characterArray.length)];
   }
   
   console.log(newPassword);
+  return newPassword;
 }
 
 
