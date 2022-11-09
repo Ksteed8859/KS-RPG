@@ -3,39 +3,71 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var specSymbols = "!@#$%^&*()";
 var numbers = "0123456789";
-var passLength = "";
+var passLength = (8,128);
+var password = "";
 
 var generatePassword = function() {
+
+  var choiceLength = window.prompt ("Choose number of digits for password (8-128)")
+    if (!choiceLength) {
+        return;
+    } if (choiceLength >= 8 && choiceLength <= 128) {
+        console.log (choiceLength)
+      }
+  
+  //
+
   var choiceLowercase = window.confirm("Would you like to include lowercase letters?");
     if (choiceLowercase) {
-      console.log("Lowercase = true")
-    } else {
-      console.log("Lowercase = false")
+      (includeLowercase == true)
+      
     }
   var choiceUppercase = window.confirm("Would you like to include uppercase letters?");
     if (choiceUppercase) {
-      console.log("Uppercase = true")
-    } else {
-      console.log("Uppercase = false")
+      (includeUppercase == true)
     }
   var choiceSymbols = window.confirm ("Would you like to include special symbols?");
     if (choiceSymbols) {
-      console.log("Symbols = true")
-    } else {
-      console.log("Symbols = false")
+      (includeSymbols == true)
     }
   var choiceNumbers = window.confirm ("Would you like to include numbers?");
     if (choiceNumbers) {
-      console.log("Numbers = true")
-    } else {
-      console.log("Numbers = false")
+      (includeNumbers == true)
     }
-  
-    var choiceLength = window.prompt ("Choose number of digits (8-128)")
-    if (!choiceLength) {
-      return;
+
+  //
+
+   var randomLowercase = function() {
+    if (includeLowercase == true) {
+      return lowercase[Math.floor(Math.random() * lowercase.length)];
     }
-      
+   }
+   var randomUppercase = function() {
+    if (includeUppercase == true) {
+      return uppercase[Math.floor(Math.random() * uppercase.length)];
+    }
+   }
+   var randomNumber = function() {
+    if (includeNumbers == true) {
+      return numbers[Math.floor(Math.random() * numbers.length)];
+    }
+   }
+   var randomSymbol = function(){
+    if (includeSymbols == true) {
+      return specSymbols[Math.floor(Math.random() * specSymbols.length)];
+    } 
+   }
+
+   var typesCount = includeLowercase + includeUppercase + includeSymbols + includeNumbers;
+   var typesArray = [(includeLowercase), (includeUppercase), (includeSymbols), (includeNumbers)]
+   (
+    item => Object.values(item)[0]
+   );
+   
+   generatePassword(); {
+    randomLowercase + randomUppercase + randomNumber +randomSymbol;
+   }
+
   /*while (choiceLength > 128) {
         window.prompt ("Too many digits: Pick a lower number. (8-128)");
         if (choiceLength <= 128) {
