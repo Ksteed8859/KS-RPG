@@ -65,7 +65,7 @@ var generatePassword = function() {
    );
    
    generatePassword(); {
-    randomLowercase + randomUppercase + randomNumber +randomSymbol;
+    randomLowercase + randomUppercase + randomNumber + randomSymbol;
    }
 
   /*while (choiceLength > 128) {
